@@ -1,0 +1,75 @@
+//  Global settings
+	@import "../../mixins/includes";
+
+//  ==========================================================================
+//	MODULE STYLES
+//  ==========================================================================
+
+
+
+//  ==========================================================================
+//	MODULE RESPONSIVE STYLES
+//  ==========================================================================
+	
+//	Mobile only styles 
+	.mobile-landscape(){
+
+	}
+	.mobile-portrait(){
+
+	}
+	.mobile-all(){
+
+	}
+
+//	Tablet only styles
+	.tablet-landscape(){
+
+	}
+	.tablet-portrait(){
+
+	}
+	.tablet-all(){
+		
+	}
+
+//	Desktop only styles
+	.desktop(){
+
+	}
+
+//  ==========================================================================
+//	DON'T EDIT BELOW
+//  ==========================================================================
+	.modResMobile(@orientation){
+		.getOrientation(@o) when (@o = landscape){
+			.mobile-landscape();
+		}
+		.getOrientation(@o) when (@o = portrait){
+			.mobile-portrait();
+		}
+		.getOrientation(@orientation);	
+		.mobile-all();
+	}
+	.modResTablet(@orientation){
+		.getOrientation(@o) when (@o = landscape){
+			.tablet-landscape();
+		}
+		.getOrientation(@o) when (@o = portrait){
+			.tablet-portrait();
+		}
+		.getOrientation(@orientation);	
+		.tablet-all();
+	}
+	.modResDesktop(){
+		.desktop();
+	}
+
+	@media @SmartphonesPortraitAndLandscape {.modResMobile(portraitandlandscape);}
+	@media @SmartphonesLandscape            {.modResMobile(landscape);}
+	@media @SmartphonesPortrait             {.modResMobile(portrait);}
+	@media @iPadPortraitAndLandscape        {.modResTablet(portraitandlandscape);}
+	@media @iPadLandscape                   {.modResTablet(landscape);}
+	@media @iPadPortrait                    {.modResTablet(portrait);}
+	@media @DesktopAndLaptop                {.modResDesktop();}
+//  ==========================================================================
